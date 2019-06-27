@@ -1,0 +1,846 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for image\geometry.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../prettify.css">
+    <link rel="stylesheet" href="../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">image\geometry.js</span></h1>
+    <h2>
+        Statements: <span class="metric">86.76% <small>(59 / 68)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">73.53% <small>(25 / 34)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">83.33% <small>(20 / 24)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">86.21% <small>(50 / 58)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">image/</a> &#187; geometry.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">49474</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16630</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">100</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">16472</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">23</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16523</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">16440</span>
+<span class="cline-any cline-yes">16440</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/** 
+ * Image module.
+ * @module image
+ */
+var dwv = dwv || <span class="branch-1 cbranch-no" title="branch not covered" >{};</span>
+dwv.image = dwv.image || <span class="branch-1 cbranch-no" title="branch not covered" >{};</span>
+&nbsp;
+/**
+ * 2D/3D Size class.
+ * @class Size
+ * @namespace dwv.image
+ * @constructor
+ * @param {Number} numberOfColumns The number of columns.
+ * @param {Number} numberOfRows The number of rows.
+ * @param {Number} numberOfSlices The number of slices.
+*/
+dwv.image.Size = function ( numberOfColumns, numberOfRows, numberOfSlices )
+{
+    /**
+     * Get the number of columns.
+     * @method getNumberOfColumns
+     * @return {Number} The number of columns.
+     */ 
+    this.getNumberOfColumns = function () { return numberOfColumns; };
+    /**
+     * Get the number of rows.
+     * @method getNumberOfRows
+     * @return {Number} The number of rows.
+     */ 
+    this.getNumberOfRows = function () { return numberOfRows; };
+    /**
+     * Get the number of slices.
+     * @method getNumberOfSlices
+     * @return {Number} The number of slices.
+     */ 
+    this.getNumberOfSlices = function () { return (numberOfSlices || <span class="branch-1 cbranch-no" title="branch not covered" >1.0)</span>; };
+};
+&nbsp;
+/**
+ * Get the size of a slice.
+ * @method getSliceSize
+ * @return {Number} The size of a slice.
+ */ 
+dwv.image.Size.prototype.getSliceSize = function () {
+    return this.getNumberOfColumns() * this.getNumberOfRows();
+};
+&nbsp;
+/**
+ * Get the total size.
+ * @method getTotalSize
+ * @return {Number} The total size.
+ */ 
+dwv.image.Size.prototype.getTotalSize = function () {
+    return this.getSliceSize() * this.getNumberOfSlices();
+};
+&nbsp;
+/**
+ * Check for equality.
+ * @method equals
+ * @param {Size} rhs The object to compare to.
+ * @return {Boolean} True if both objects are equal.
+ */ 
+dwv.image.Size.prototype.equals = function (rhs) {
+    return rhs !== null &amp;&amp;
+        this.getNumberOfColumns() === rhs.getNumberOfColumns() &amp;&amp;
+        this.getNumberOfRows() === rhs.getNumberOfRows() &amp;&amp;
+        this.getNumberOfSlices() === rhs.getNumberOfSlices();
+};
+&nbsp;
+/**
+ * Check that coordinates are within bounds.
+ * @method isInBounds
+ * @param {Number} i The column coordinate.
+ * @param {Number} j The row coordinate.
+ * @param {Number} k The slice coordinate.
+ * @return {Boolean} True if the given coordinates are within bounds.
+ */ 
+dwv.image.Size.prototype.isInBounds = function ( i, j, k ) {
+    if( i &lt; 0 || i &gt; this.getNumberOfColumns() - 1 ||
+        j &lt; 0 || j &gt; this.getNumberOfRows() - 1 ||
+        k &lt; 0 || k &gt; this.getNumberOfSlices() - 1 ) {
+        return false;
+    }
+    return true;
+};
+&nbsp;
+/**
+ * 2D/3D Spacing class. 
+ * @class Spacing
+ * @namespace dwv.image
+ * @constructor
+ * @param {Number} columnSpacing The column spacing.
+ * @param {Number} rowSpacing The row spacing.
+ * @param {Number} sliceSpacing The slice spacing.
+ */
+dwv.image.Spacing = function ( columnSpacing, rowSpacing, sliceSpacing )
+{
+    /**
+     * Get the column spacing.
+     * @method getColumnSpacing
+     * @return {Number} The column spacing.
+     */ 
+    this.getColumnSpacing = function () { return columnSpacing; };
+    /**
+     * Get the row spacing.
+     * @method getRowSpacing
+     * @return {Number} The row spacing.
+     */ 
+    this.getRowSpacing = function () { return rowSpacing; };
+    /**
+     * Get the slice spacing.
+     * @method getSliceSpacing
+     * @return {Number} The slice spacing.
+     */ 
+    this.getSliceSpacing = function () { return (sliceSpacing || <span class="branch-1 cbranch-no" title="branch not covered" >1.0)</span>; };
+};
+&nbsp;
+/**
+ * Check for equality.
+ * @method equals
+ * @param {Spacing} rhs The object to compare to.
+ * @return {Boolean} True if both objects are equal.
+ */ 
+dwv.image.Spacing.prototype.equals = function (rhs) {
+    return rhs !== null &amp;&amp;
+        this.getColumnSpacing() === rhs.getColumnSpacing() &amp;&amp;
+        this.getRowSpacing() === rhs.getRowSpacing() &amp;&amp;
+        this.getSliceSpacing() === rhs.getSliceSpacing();
+};
+&nbsp;
+/**
+ * 2D/3D Geometry class. 
+ * @class Geometry
+ * @namespace dwv.image
+ * @constructor
+ * @param {Object} origin The object origin.
+ * @param {Object} size The object size.
+ * @param {Object} spacing The object spacing.
+ */
+dwv.image.Geometry = function ( origin, size, spacing )
+{
+    // check input origin.
+    <span class="missing-if-branch" title="if path not taken" >I</span>if( typeof(origin) === 'undefined' ) {
+<span class="cstat-no" title="statement not covered" >        origin = new dwv.math.Point3D(0,0,0);</span>
+    }
+    var origins = [origin];
+    
+    /**
+     * Get the object first origin.
+     * @method getOrigin
+     * @return {Object} The object first origin.
+     */ 
+    this.getOrigin = function () { return origin; };
+    /**
+     * Get the object origins.
+     * @method getOrigins
+     * @return {Array} The object origins.
+     */ 
+    this.getOrigins = function () { return origins; };
+    /**
+     * Get the object size.
+     * @method getSize
+     * @return {Object} The object size.
+     */ 
+    this.getSize = function () { return size; };
+    /**
+     * Get the object spacing.
+     * @method getSpacing
+     * @return {Object} The object spacing.
+     */ 
+    this.getSpacing = <span class="fstat-no" title="function not covered" >function () {</span> <span class="cstat-no" title="statement not covered" >return spacing; </span>};
+    
+    /**
+     * Get the slice position of a point in the current slice layout.
+     * @method getSliceIndex
+     * @param {Object} point The point to evaluate.
+     */
+    this.getSliceIndex = function (point)
+    {
+        // cannot use this.worldToIndex(point).getK() since
+        // we cannot guaranty consecutive slices...
+        
+        // find the closest index
+        var closestSliceIndex = 0;
+        var minDiff = Math.abs( origins[0].getZ() - point.getZ() );
+        var diff = 0;
+        for( var i = 0; i &lt; origins.length; ++i )
+        {
+            diff = Math.abs( origins[i].getZ() - point.getZ() );
+            if( diff &lt; minDiff ) 
+            {
+                minDiff = diff;
+                closestSliceIndex = i;
+            }
+        }
+        diff = origins[closestSliceIndex].getZ() - point.getZ();
+        var sliceIndex = ( diff &gt; 0 ) ? closestSliceIndex : closestSliceIndex + 1;
+        return sliceIndex;
+    };
+    
+    /**
+     * Append an origin to the geometry.
+     * @param {Object} origin The origin to append.
+     * @param {Number} index The index at which to append.
+     */
+    this.appendOrigin = function (origin, index)
+    {
+        // add in origin array
+        origins.splice(index, 0, origin);
+        // increment slice number
+        size = new dwv.image.Size(
+            size.getNumberOfColumns(),
+            size.getNumberOfRows(),
+            size.getNumberOfSlices() + 1);
+    };
+&nbsp;
+};
+&nbsp;
+/**
+ * Check for equality.
+ * @method equals
+ * @param {Geometry} rhs The object to compare to.
+ * @return {Boolean} True if both objects are equal.
+ */ 
+dwv.image.Geometry.prototype.equals = <span class="fstat-no" title="function not covered" >function (rhs) {</span>
+<span class="cstat-no" title="statement not covered" >    return rhs !== null &amp;&amp;</span>
+        this.getOrigin() === rhs.getOrigin() &amp;&amp;
+        this.getSize() === rhs.getSize() &amp;&amp;
+        this.getSpacing() === rhs.getSpacing();
+};
+&nbsp;
+/**
+ * Convert an index to an offset in memory.
+ * @param {Object} index The index to convert.
+ */
+dwv.image.Geometry.prototype.indexToOffset = function (index) {
+    var size = this.getSize();
+    return index.getI() +
+       index.getJ() * size.getNumberOfColumns() +
+       index.getK() * size.getSliceSize();
+};
+&nbsp;
+/**
+ * Convert an index into world coordinates.
+ * @param {Object} index The index to convert.
+ */
+dwv.image.Geometry.prototype.indexToWorld = <span class="fstat-no" title="function not covered" >function (index) {</span>
+<span class="cstat-no" title="statement not covered" >    var origin = this.getOrigin();</span>
+<span class="cstat-no" title="statement not covered" >    var spacing = this.getSpacing();</span>
+<span class="cstat-no" title="statement not covered" >    return new dwv.math.Point3D(</span>
+        origin.getX() + index.getI() * spacing.getColumnSpacing(),
+        origin.getY() + index.getJ() * spacing.getRowSpacing(),
+        origin.getZ() + index.getK() * spacing.getSliceSpacing() );
+};
+&nbsp;
+/**
+ * Convert world coordinates into an index.
+ * @param {Object} THe point to convert.
+ */
+dwv.image.Geometry.prototype.worldToIndex = <span class="fstat-no" title="function not covered" >function (point) {</span>
+<span class="cstat-no" title="statement not covered" >    var origin = this.getOrigin();</span>
+<span class="cstat-no" title="statement not covered" >    var spacing = this.getSpacing();</span>
+<span class="cstat-no" title="statement not covered" >    return new dwv.math.Point3D(</span>
+        point.getX() / spacing.getColumnSpacing() - origin.getX(),
+        point.getY() / spacing.getRowSpacing() - origin.getY(),
+        point.getZ() / spacing.getSliceSpacing() - origin.getZ() );
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat May 04 2019 15:45:06 GMT+0800 (中国标准时间)</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

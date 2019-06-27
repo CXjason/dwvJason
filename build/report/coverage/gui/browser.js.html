@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for gui\browser.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../prettify.css">
+    <link rel="stylesheet" href="../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">gui\browser.js</span></h1>
+    <h2>
+        Statements: <span class="metric">25.81% <small>(8 / 31)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">13.64% <small>(3 / 22)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">20% <small>(1 / 5)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">25.81% <small>(8 / 31)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">gui/</a> &#187; browser.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/** 
+ * Browser module.
+ * @module browser
+ */
+var dwv = dwv || <span class="branch-1 cbranch-no" title="branch not covered" >{};</span>
+/**
+ * Namespace for browser related functions.
+ * @class browser
+ * @namespace dwv
+ * @static
+ */
+dwv.browser = dwv.browser || {};
+&nbsp;
+/**
+ * Browser check for the FileAPI.
+ * @method hasFileApi
+ * @static
+ */ 
+dwv.browser.hasFileApi = <span class="fstat-no" title="function not covered" >function()</span>
+{
+    // regular test does not work on Safari 5
+<span class="cstat-no" title="statement not covered" >    var isSafari5 = (navigator.appVersion.indexOf("Safari") !== -1) &amp;&amp;</span>
+        (navigator.appVersion.indexOf("Chrome") === -1) &amp;&amp;
+        ( (navigator.appVersion.indexOf("5.0.") !== -1) ||
+          (navigator.appVersion.indexOf("5.1.") !== -1) );
+<span class="cstat-no" title="statement not covered" >    if( isSafari5 ) </span>
+    {
+<span class="cstat-no" title="statement not covered" >        console.warn("Assuming FileAPI support for Safari5...");</span>
+<span class="cstat-no" title="statement not covered" >        return true;</span>
+    }
+    // regular test
+<span class="cstat-no" title="statement not covered" >    return "FileReader" in window;</span>
+};
+&nbsp;
+/**
+ * Browser check for the XMLHttpRequest.
+ * @method hasXmlHttpRequest
+ * @static
+ */ 
+dwv.browser.hasXmlHttpRequest = <span class="fstat-no" title="function not covered" >function()</span>
+{
+<span class="cstat-no" title="statement not covered" >    return "XMLHttpRequest" in window &amp;&amp; "withCredentials" in new XMLHttpRequest();</span>
+};
+&nbsp;
+/**
+ * Browser check for typed array.
+ * @method hasTypedArray
+ * @static
+ */ 
+dwv.browser.hasTypedArray = <span class="fstat-no" title="function not covered" >function()</span>
+{
+<span class="cstat-no" title="statement not covered" >    return "Uint8Array" in window &amp;&amp; "Uint16Array" in window;</span>
+};
+&nbsp;
+/**
+ * Browser check for clamped array.
+ * @method hasClampedArray
+ * @static
+ */ 
+dwv.browser.hasClampedArray = function()
+{
+    return "Uint8ClampedArray" in window;
+};
+&nbsp;
+/**
+ * Browser checks to see if it can run dwv. Throws an error if not.
+ * TODO Maybe use http://modernizr.com/.
+ * @method check
+ * @static
+ */ 
+dwv.browser.check = <span class="fstat-no" title="function not covered" >function()</span>
+{
+<span class="cstat-no" title="statement not covered" >    var appnorun = "The application cannot be run.";</span>
+<span class="cstat-no" title="statement not covered" >    var message = "";</span>
+    // Check for the File API support
+<span class="cstat-no" title="statement not covered" >    if( !dwv.browser.hasFileApi() ) {</span>
+<span class="cstat-no" title="statement not covered" >        message = "The File APIs are not supported in this browser. ";</span>
+<span class="cstat-no" title="statement not covered" >        alert(message+appnorun);</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error(message);</span>
+    }
+    // Check for XMLHttpRequest
+<span class="cstat-no" title="statement not covered" >    if( !dwv.browser.hasXmlHttpRequest() ) {</span>
+<span class="cstat-no" title="statement not covered" >        message = "The XMLHttpRequest is not supported in this browser. ";</span>
+<span class="cstat-no" title="statement not covered" >        alert(message+appnorun);</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error(message);</span>
+    }
+    // Check typed array
+<span class="cstat-no" title="statement not covered" >    if( !dwv.browser.hasTypedArray() ) {</span>
+<span class="cstat-no" title="statement not covered" >        message = "The Typed arrays are not supported in this browser. ";</span>
+<span class="cstat-no" title="statement not covered" >        alert(message+appnorun);</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error(message);</span>
+    }
+    // check clamped array
+<span class="cstat-no" title="statement not covered" >    if( !dwv.browser.hasClampedArray() ) {</span>
+        // silent fail since IE does not support it...
+<span class="cstat-no" title="statement not covered" >        console.warn("The Uint8ClampedArray is not supported in this browser. This may impair performance. ");</span>
+    }
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat May 04 2019 15:45:06 GMT+0800 (中国标准时间)</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

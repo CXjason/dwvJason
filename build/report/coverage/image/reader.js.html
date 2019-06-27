@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for image\reader.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../prettify.css">
+    <link rel="stylesheet" href="../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">image\reader.js</span></h1>
+    <h2>
+        Statements: <span class="metric">9.52% <small>(4 / 42)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">25% <small>(2 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">0% <small>(0 / 2)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">9.52% <small>(4 / 42)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">image/</a> &#187; reader.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/** 
+ * Image module.
+ * @module image
+ */
+var dwv = dwv || <span class="branch-1 cbranch-no" title="branch not covered" >{};</span>
+/**
+ * Namespace for image related functions.
+ * @class image
+ * @namespace dwv
+ * @static
+ */
+dwv.image = dwv.image || <span class="branch-1 cbranch-no" title="branch not covered" >{};</span>
+&nbsp;
+/**
+ * Get data from an input image using a canvas.
+ * @method getDataFromImage
+ * @static
+ * @param {Image} image The image.
+ * @return {Mixed} The corresponding view and info.
+ */
+dwv.image.getDataFromImage = <span class="fstat-no" title="function not covered" >function(image)</span>
+{
+    // draw the image in the canvas in order to get its data
+<span class="cstat-no" title="statement not covered" >    var canvas = document.createElement('canvas');</span>
+<span class="cstat-no" title="statement not covered" >    canvas.width = image.width;</span>
+<span class="cstat-no" title="statement not covered" >    canvas.height = image.height;</span>
+<span class="cstat-no" title="statement not covered" >    var ctx = canvas.getContext('2d');</span>
+<span class="cstat-no" title="statement not covered" >    ctx.drawImage(image, 0, 0, image.width, image.height);</span>
+    // get the image data
+<span class="cstat-no" title="statement not covered" >    var imageData = ctx.getImageData(0, 0, image.width, image.height);</span>
+    // remove alpha
+    // TODO support passing the full image data
+<span class="cstat-no" title="statement not covered" >    var buffer = [];</span>
+<span class="cstat-no" title="statement not covered" >    var j = 0;</span>
+<span class="cstat-no" title="statement not covered" >    for( var i = 0; i &lt; imageData.data.length; i+=4 ) {</span>
+<span class="cstat-no" title="statement not covered" >        buffer[j] = imageData.data[i];</span>
+<span class="cstat-no" title="statement not covered" >        buffer[j+1] = imageData.data[i+1];</span>
+<span class="cstat-no" title="statement not covered" >        buffer[j+2] = imageData.data[i+2];</span>
+<span class="cstat-no" title="statement not covered" >        j+=3;</span>
+    }
+    // create dwv Image
+<span class="cstat-no" title="statement not covered" >    var imageSize = new dwv.image.Size(image.width, image.height);</span>
+    // TODO: wrong info...
+<span class="cstat-no" title="statement not covered" >    var imageSpacing = new dwv.image.Spacing(1,1);</span>
+<span class="cstat-no" title="statement not covered" >    var sliceIndex = image.index ? image.index : 0;</span>
+<span class="cstat-no" title="statement not covered" >    var origin = new dwv.math.Point3D(0,0,sliceIndex);</span>
+<span class="cstat-no" title="statement not covered" >    var geometry = new dwv.image.Geometry(origin, imageSize, imageSpacing );</span>
+<span class="cstat-no" title="statement not covered" >    var dwvImage = new dwv.image.Image( geometry, buffer );</span>
+<span class="cstat-no" title="statement not covered" >    dwvImage.setPhotometricInterpretation("RGB");</span>
+    // meta information
+<span class="cstat-no" title="statement not covered" >    var meta = {};</span>
+<span class="cstat-no" title="statement not covered" >    meta.BitsStored = 8;</span>
+<span class="cstat-no" title="statement not covered" >    dwvImage.setMeta(meta);</span>
+    // view
+<span class="cstat-no" title="statement not covered" >    var view = new dwv.image.View(dwvImage);</span>
+<span class="cstat-no" title="statement not covered" >    view.setWindowLevelMinMax();</span>
+    // properties
+<span class="cstat-no" title="statement not covered" >    var info = {};</span>
+<span class="cstat-no" title="statement not covered" >    if( image.file )</span>
+    {
+<span class="cstat-no" title="statement not covered" >        info.fileName = { "value": image.file.name };</span>
+<span class="cstat-no" title="statement not covered" >        info.fileType = { "value": image.file.type };</span>
+<span class="cstat-no" title="statement not covered" >        info.fileLastModifiedDate = { "value": image.file.lastModifiedDate };</span>
+    }
+<span class="cstat-no" title="statement not covered" >    info.imageWidth = { "value": image.width };</span>
+<span class="cstat-no" title="statement not covered" >    info.imageHeight = { "value": image.height };</span>
+    // return
+<span class="cstat-no" title="statement not covered" >    return {"view": view, "info": info};</span>
+};
+&nbsp;
+/**
+ * Get data from an input buffer using a DICOM parser.
+ * @method getDataFromDicomBuffer
+ * @static
+ * @param {Array} buffer The input data buffer.
+ * @return {Mixed} The corresponding view and info.
+ */
+dwv.image.getDataFromDicomBuffer = <span class="fstat-no" title="function not covered" >function(buffer)</span>
+{
+    // DICOM parser
+<span class="cstat-no" title="statement not covered" >    var dicomParser = new dwv.dicom.DicomParser();</span>
+    // parse the buffer
+<span class="cstat-no" title="statement not covered" >    dicomParser.parse(buffer);</span>
+    // create the view
+<span class="cstat-no" title="statement not covered" >    var viewFactory = new dwv.image.ViewFactory();</span>
+<span class="cstat-no" title="statement not covered" >    var view = viewFactory.create( dicomParser.getDicomElements(), dicomParser.getPixelBuffer() );</span>
+    // return
+<span class="cstat-no" title="statement not covered" >    return {"view": view, "info": dicomParser.getDicomElements().dumpToTable()};</span>
+};
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat May 04 2019 15:45:06 GMT+0800 (中国标准时间)</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

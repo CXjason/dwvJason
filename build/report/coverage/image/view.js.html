@@ -1,0 +1,1464 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for image\view.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../prettify.css">
+    <link rel="stylesheet" href="../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header medium">
+    <h1>Code coverage report for <span class="entity">image\view.js</span></h1>
+    <h2>
+        Statements: <span class="metric">68.75% <small>(121 / 176)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">44% <small>(22 / 50)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">56% <small>(14 / 25)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">69.82% <small>(118 / 169)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">image/</a> &#187; view.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">32772</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">32772</span>
+<span class="cline-any cline-yes">32772</span>
+<span class="cline-any cline-yes">32772</span>
+<span class="cline-any cline-yes">32772</span>
+<span class="cline-any cline-yes">32772</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/** 
+ * Image module.
+ * @module image
+ */
+var dwv = dwv || <span class="branch-1 cbranch-no" title="branch not covered" >{};</span>
+dwv.image = dwv.image || <span class="branch-1 cbranch-no" title="branch not covered" >{};</span>
+&nbsp;
+/**
+ * View class.
+ * @class View
+ * @namespace dwv.image
+ * @constructor
+ * @param {Image} image The associated image.
+ * @param {Boolean} isSigned Is the data signed.
+ * Need to set the window lookup table once created
+ * (either directly or with helper methods). 
+ */
+dwv.image.View = function(image, isSigned)
+{
+    /**
+     * Window lookup tables, indexed per Rescale Slope and Intercept (RSI).
+     * @property windowLuts
+     * @private
+     * @type Window
+     */
+    var windowLuts = {};
+    
+    /**
+     * Window presets.
+     * @property windowPresets
+     * @private
+     * @type Object
+     */
+    var windowPresets = null;
+    /**
+     * colour map
+     * @property colourMap
+     * @private
+     * @type Object
+     */
+    var colourMap = dwv.image.lut.plain;
+    /**
+     * Current position
+     * @property currentPosition
+     * @private
+     * @type Object
+     */
+    var currentPosition = {"i":0,"j":0,"k":0};
+    
+    /**
+     * Get the associated image.
+     * @method getImage
+     * @return {Image} The associated image.
+     */ 
+    this.getImage = function() { return image; };
+    /**
+     * Set the associated image.
+     * @method setImage
+     * @param {Image} inImage The associated image.
+     */ 
+    this.setImage = <span class="fstat-no" title="function not covered" >function(inImage) {</span> <span class="cstat-no" title="statement not covered" >image = inImage; </span>};
+    
+    /**
+     * Get the window LUT of the image.
+     * @method getWindowLut
+     * @return {Window} The window LUT of the image.
+     */ 
+    this.getWindowLut = function (rsi) { 
+        <span class="missing-if-branch" title="else path not taken" >E</span>if ( typeof rsi === "undefined" ) {
+            var sliceNumber = this.getCurrentPosition().k;
+            rsi = image.getRescaleSlopeAndIntercept(sliceNumber);
+        }
+        return windowLuts[ rsi.toString() ];
+    };
+    /**
+     * Set the window LUT of the image.
+     * @method setWindowLut
+     * @param {Window} wlut The window LUT of the image.
+     */ 
+    this.setWindowLut = function (wlut) 
+    {
+        var rsi = wlut.getRescaleLut().getRSI();
+        windowLuts[rsi.toString()] = wlut;
+    };
+    
+    var self = this;
+    
+    /**
+     * Initialise the view. Only called at construction.
+     * @method initialise
+     * @private
+     */ 
+    function initialise()
+    {
+        // create the rescale lookup table
+        var rescaleLut = new dwv.image.lut.Rescale(
+            image.getRescaleSlopeAndIntercept(0) );
+        // initialise the rescale lookup table
+        rescaleLut.initialise(image.getMeta().BitsStored);
+        // create the window lookup table
+        var windowLut = new dwv.image.lut.Window(rescaleLut, isSigned);
+        self.setWindowLut(windowLut);
+    }
+    
+    // default constructor
+    initialise();
+&nbsp;
+    /**
+     * Get the window presets.
+     * @method getWindowPresets
+     * @return {Object} The window presets.
+     */ 
+    this.getWindowPresets = <span class="fstat-no" title="function not covered" >function() {</span> <span class="cstat-no" title="statement not covered" >return windowPresets; </span>};
+    /**
+     * Set the window presets.
+     * @method setWindowPresets
+     * @param {Object} presets The window presets.
+     */ 
+    this.setWindowPresets = <span class="fstat-no" title="function not covered" >function(presets) { </span>
+<span class="cstat-no" title="statement not covered" >        windowPresets = presets;</span>
+<span class="cstat-no" title="statement not covered" >        this.setWindowLevel(presets[0].center, presets[0].width);</span>
+    };
+    
+    /**
+     * Get the colour map of the image.
+     * @method getColourMap
+     * @return {Object} The colour map of the image.
+     */ 
+    this.getColourMap = function() { return colourMap; };
+    /**
+     * Set the colour map of the image.
+     * @method setColourMap
+     * @param {Object} map The colour map of the image.
+     */ 
+    this.setColourMap = <span class="fstat-no" title="function not covered" >function(map) { </span>
+<span class="cstat-no" title="statement not covered" >        colourMap = map;</span>
+        // TODO Better handle this...
+<span class="cstat-no" title="statement not covered" >        if( this.getImage().getPhotometricInterpretation() === "MONOCHROME1") {</span>
+<span class="cstat-no" title="statement not covered" >            colourMap = dwv.image.lut.invPlain;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        this.fireEvent({"type": "colour-change", </span>
+           "wc": this.getWindowLut().getCenter(),
+           "ww": this.getWindowLut().getWidth() });
+    };
+    
+    /**
+     * Is the data signed data.
+     * @method isSigned
+     * @return {Boolean} The signed data flag.
+     */ 
+    this.isSigned = <span class="fstat-no" title="function not covered" >function() {</span> <span class="cstat-no" title="statement not covered" >return isSigned; </span>};
+    
+    /**
+     * Get the current position.
+     * @method getCurrentPosition
+     * @return {Object} The current position.
+     */ 
+    this.getCurrentPosition = function() { 
+        // return a clone to avoid reference problems
+        return {"i": currentPosition.i, "j": currentPosition.j, "k": currentPosition.k};
+    };
+    /**
+     * Set the current position. Returns false if not in bounds.
+     * @method setCurrentPosition
+     * @param {Object} pos The current position.
+     */ 
+    this.setCurrentPosition = <span class="fstat-no" title="function not covered" >function(pos) { </span>
+<span class="cstat-no" title="statement not covered" >        if( !image.getGeometry().getSize().isInBounds(pos.i,pos.j,pos.k) ) {</span>
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        var oldPosition = currentPosition;</span>
+<span class="cstat-no" title="statement not covered" >        currentPosition = pos;</span>
+        // only display value for monochrome data
+<span class="cstat-no" title="statement not covered" >        if( image.getPhotometricInterpretation().match(/MONOCHROME/) !== null )</span>
+        {
+<span class="cstat-no" title="statement not covered" >            this.fireEvent({"type": "position-change", </span>
+                "i": pos.i, "j": pos.j, "k": pos.k,
+                "value": image.getRescaledValue(pos.i,pos.j,pos.k)});
+        }
+        else
+        {
+<span class="cstat-no" title="statement not covered" >            this.fireEvent({"type": "position-change", </span>
+                "i": pos.i, "j": pos.j, "k": pos.k});
+        }
+        // slice change event (used to trigger redraw)
+<span class="cstat-no" title="statement not covered" >        if( oldPosition.k !== currentPosition.k ) {</span>
+<span class="cstat-no" title="statement not covered" >            this.fireEvent({"type": "slice-change"});</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return true;</span>
+    };
+    
+    /**
+     * Append another view to this one.
+     * @method append
+     * @param {Object} rhs The view to append.
+     */
+    this.append = <span class="fstat-no" title="function not covered" >function( rhs )</span>
+    {  
+       // append images
+<span class="cstat-no" title="statement not covered" >       this.getImage().appendSlice( rhs.getImage() );</span>
+       // init to update self
+<span class="cstat-no" title="statement not covered" >       this.setWindowLut(rhs.getWindowLut());</span>
+    };
+    
+    /**
+     * Set the view window/level.
+     * @method setWindowLevel
+     * @param {Number} center The window center.
+     * @param {Number} width The window width.
+     * Warning: uses the latest set rescale LUT or the default linear one.
+     */
+    this.setWindowLevel = function ( center, width )
+    {
+        // window width shall be &gt;= 1 (see https://www.dabsoft.ch/dicom/3/C.11.2.1.2/)
+        <span class="missing-if-branch" title="else path not taken" >E</span>if ( width &gt;= 1 ) {
+            for ( var key in windowLuts ) {
+                windowLuts[key].setCenterAndWidth(center, width);
+            }
+            this.fireEvent({"type": "wl-change", "wc": center, "ww": width });
+        }
+    };
+&nbsp;
+    /**
+     * Clone the image using all meta data and the original data buffer.
+     * @method clone
+     * @return {View} A full copy of this {dwv.image.View}.
+     */
+    this.clone = <span class="fstat-no" title="function not covered" >function ()</span>
+    {
+<span class="cstat-no" title="statement not covered" >        var copy = new dwv.image.View(this.getImage());</span>
+<span class="cstat-no" title="statement not covered" >        for ( var key in windowLuts ) {</span>
+<span class="cstat-no" title="statement not covered" >            copy.setWindowLut(windowLuts[key]);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        copy.setListeners(this.getListeners());</span>
+<span class="cstat-no" title="statement not covered" >        return copy;</span>
+    };
+&nbsp;
+    /**
+     * View listeners
+     * @property listeners
+     * @private
+     * @type Object
+     */
+    var listeners = {};
+    /**
+     * Get the view listeners.
+     * @method getListeners
+     * @return {Object} The view listeners.
+     */ 
+    this.getListeners = function() { return listeners; };
+    /**
+     * Set the view listeners.
+     * @method setListeners
+     * @param {Object} list The view listeners.
+     */ 
+    this.setListeners = <span class="fstat-no" title="function not covered" >function(list) {</span> <span class="cstat-no" title="statement not covered" >listeners = list; </span>};
+};
+&nbsp;
+/**
+ * Set the image window/level to cover the full data range.
+ * @method setWindowLevelMinMax
+ * Warning: uses the latest set rescale LUT or the default linear one.
+ */
+dwv.image.View.prototype.setWindowLevelMinMax = function()
+{
+    // calculate center and width
+    var range = this.getImage().getRescaledDataRange();
+    var min = range.min;
+    var max = range.max;
+    var width = max - min;
+    var center = min + width/2;
+    // set window level
+    this.setWindowLevel(center,width);
+};
+&nbsp;
+/**
+ * Generate display image data to be given to a canvas.
+ * @method generateImageData
+ * @param {Array} array The array to fill in.
+ * @param {Number} sliceNumber The slice position.
+ */
+dwv.image.View.prototype.generateImageData = function( array )
+{        
+    var sliceNumber = this.getCurrentPosition().k;
+    var image = this.getImage();
+    var pxValue = 0;
+    var photoInterpretation = image.getPhotometricInterpretation();
+    var planarConfig = image.getPlanarConfiguration();
+    var windowLut = this.getWindowLut();
+    windowLut.update();
+    var colourMap = this.getColourMap();
+    var index = 0;
+    var sliceSize = image.getGeometry().getSize().getSliceSize();
+    var sliceOffset = 0;
+    switch (photoInterpretation)
+    {
+<span class="branch-0 cbranch-no" title="branch not covered" >    case "MONOCHROME1":</span>
+    case "MONOCHROME2":
+        sliceOffset = (sliceNumber || 0) * sliceSize;
+        var iMax = sliceOffset + sliceSize;
+        for(var i=sliceOffset; i &lt; iMax; ++i)
+        {        
+            pxValue = parseInt( windowLut.getValue( 
+                    image.getValueAtOffset(i) ), 10 );
+            array.data[index] = colourMap.red[pxValue];
+            array.data[index+1] = colourMap.green[pxValue];
+            array.data[index+2] = colourMap.blue[pxValue];
+            array.data[index+3] = 0xff;
+            index += 4;
+        }
+        break;
+    
+    case "RGB":
+        // the planar configuration defines the memory layout
+        <span class="missing-if-branch" title="if path not taken" >I</span>if( planarConfig !== 0 &amp;&amp; planarConfig !== 1 ) {
+<span class="cstat-no" title="statement not covered" >            throw new Error("Unsupported planar configuration: "+planarConfig);</span>
+        }
+        sliceOffset = (sliceNumber || 0) * 3 * sliceSize;
+        // default: RGBRGBRGBRGB...
+        var posR = sliceOffset;
+        var posG = sliceOffset + 1;
+        var posB = sliceOffset + 2;
+        var stepPos = 3;
+        // RRRR...GGGG...BBBB...
+        if (planarConfig === 1) { 
+            posR = sliceOffset;
+            posG = sliceOffset + sliceSize;
+            posB = sliceOffset + 2 * sliceSize;
+            stepPos = 1;
+        }
+        
+        var redValue = 0;
+        var greenValue = 0;
+        var blueValue = 0;
+        for(var j=0; j &lt; sliceSize; ++j)
+        {        
+            redValue = parseInt( windowLut.getValue( 
+                    image.getValueAtOffset(posR) ), 10 );
+            greenValue = parseInt( windowLut.getValue( 
+                    image.getValueAtOffset(posG) ), 10 );
+            blueValue = parseInt( windowLut.getValue( 
+                    image.getValueAtOffset(posB) ), 10 );
+            
+            array.data[index] = redValue;
+            array.data[index+1] = greenValue;
+            array.data[index+2] = blueValue;
+            array.data[index+3] = 0xff;
+            index += 4;
+            
+            posR += stepPos;
+            posG += stepPos;
+            posB += stepPos;
+        }
+        break;
+    
+<span class="branch-3 cbranch-no" title="branch not covered" >    default: </span>
+<span class="cstat-no" title="statement not covered" >        throw new Error("Unsupported photometric interpretation: "+photoInterpretation);</span>
+    }
+};
+&nbsp;
+/**
+ * Add an event listener on the view.
+ * @method addEventListener
+ * @param {String} type The event type.
+ * @param {Object} listener The method associated with the provided event type.
+ */
+dwv.image.View.prototype.addEventListener = function(type, listener)
+{
+    var listeners = this.getListeners();
+    if( !listeners[type] ) {
+        listeners[type] = [];
+    }
+    listeners[type].push(listener);
+};
+&nbsp;
+/**
+ * Remove an event listener on the view.
+ * @method removeEventListener
+ * @param {String} type The event type.
+ * @param {Object} listener The method associated with the provided event type.
+ */
+dwv.image.View.prototype.removeEventListener = function(type, listener)
+{
+    var listeners = this.getListeners();
+    <span class="missing-if-branch" title="if path not taken" >I</span>if( !listeners[type] ) {
+<span class="cstat-no" title="statement not covered" >        return;</span>
+    }
+    for(var i=0; i &lt; listeners[type].length; ++i)
+    {   
+        if( listeners[type][i] === listener ) {
+            listeners[type].splice(i,1);
+        }
+    }
+};
+&nbsp;
+/**
+ * Fire an event: call all associated listeners.
+ * @method fireEvent
+ * @param {Object} event The event to fire.
+ */
+dwv.image.View.prototype.fireEvent = function(event)
+{
+    var listeners = this.getListeners();
+    if( !listeners[event.type] ) {
+        return;
+    }
+    for(var i=0; i &lt; listeners[event.type].length; ++i)
+    {   
+        listeners[event.type][i](event);
+    }
+};
+&nbsp;
+/**
+ * View factory.
+ * @class ViewFactory
+ * @namespace dwv.image
+ * @constructor
+ */
+dwv.image.ViewFactory = <span class="fstat-no" title="function not covered" >function () {</span>};
+&nbsp;
+/**
+ * Get an View object from the read DICOM file.
+ * @method create
+ * @param {Object} dicomElements The DICOM tags.
+ * @param {Array} pixelBuffer The pixel buffer.
+ * @returns {View} The new View.
+ */
+dwv.image.ViewFactory.prototype.create = <span class="fstat-no" title="function not covered" >function (dicomElements, pixelBuffer)</span>
+{
+    // create the image
+<span class="cstat-no" title="statement not covered" >    var imageFactory = new dwv.image.ImageFactory();</span>
+<span class="cstat-no" title="statement not covered" >    var image = imageFactory.create(dicomElements, pixelBuffer);</span>
+    
+    // PixelRepresentation
+<span class="cstat-no" title="statement not covered" >    var isSigned = false;</span>
+<span class="cstat-no" title="statement not covered" >    var pixelRepresentation = dicomElements.getFromKey("x00280103");</span>
+<span class="cstat-no" title="statement not covered" >    if ( pixelRepresentation === 1 ) {</span>
+<span class="cstat-no" title="statement not covered" >        isSigned = true;</span>
+    }
+    // view
+<span class="cstat-no" title="statement not covered" >    var view = new dwv.image.View(image, isSigned);</span>
+    // presets
+<span class="cstat-no" title="statement not covered" >    var windowPresets = [];</span>
+    // WindowCenter and WindowWidth
+<span class="cstat-no" title="statement not covered" >    var windowCenter = dicomElements.getFromKey("x00281050", true);</span>
+<span class="cstat-no" title="statement not covered" >    var windowWidth = dicomElements.getFromKey("x00281051", true);</span>
+<span class="cstat-no" title="statement not covered" >    if ( windowCenter &amp;&amp; windowWidth ) {</span>
+<span class="cstat-no" title="statement not covered" >        var name;</span>
+<span class="cstat-no" title="statement not covered" >        for ( var j = 0; j &lt; windowCenter.length; ++j) {</span>
+<span class="cstat-no" title="statement not covered" >            var width = parseFloat( windowWidth[j], 10 );</span>
+<span class="cstat-no" title="statement not covered" >            var center = parseFloat( windowCenter[j], 10 );</span>
+<span class="cstat-no" title="statement not covered" >            if ( width ) {</span>
+<span class="cstat-no" title="statement not covered" >                name = "Default"+j;</span>
+<span class="cstat-no" title="statement not covered" >                var windowCenterWidthExplanation = dicomElements.getFromKey("x00281055");</span>
+<span class="cstat-no" title="statement not covered" >                if ( windowCenterWidthExplanation ) {</span>
+<span class="cstat-no" title="statement not covered" >                    name = windowCenterWidthExplanation[j];</span>
+                }
+<span class="cstat-no" title="statement not covered" >                windowPresets.push({</span>
+                    "center": center,
+                    "width": width, 
+                    "name": name
+                });
+            }
+        }
+    }
+<span class="cstat-no" title="statement not covered" >    if ( windowPresets.length !== 0 ) {</span>
+<span class="cstat-no" title="statement not covered" >        view.setWindowPresets( windowPresets );</span>
+    }
+    else {
+<span class="cstat-no" title="statement not covered" >        view.setWindowLevelMinMax();</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return view;</span>
+};</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat May 04 2019 15:45:06 GMT+0800 (中国标准时间)</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
